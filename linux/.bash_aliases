@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# alias ls='ls --color=always -rthla'
+alias ls='ls --color=always -rthla'
 alias explore='dolphin'
 alias xampp='sudo /opt/lampp/xampp'
 alias xamppsql='sudo /opt/lampp/bin/mysql'
-alias IDEA='nohup snap run intellij-idea-ultimate'
+alias IDEA='nohup snap run intellij-idea-ultimate &'
+alias xampp='sudo /opt/lampp/xampp'
+alias postman='nohup ~/Programs/Postman/app/Postman &'
 
 M2_HOME='/opt/apache-maven-3.6.3'
 PATH="$M2_HOME/bin:$PATH"
@@ -12,8 +14,9 @@ export PATH
 
 function updater() {
 	sudo apt update
-	sudo apt upgrade
-	sudo apt autoremove
+	sudo apt upgrade -y
+	sudo apt-get dist-upgrade
+	sudo apt autoremove -y
 	echo 'Done updating!'
 }
 
@@ -22,7 +25,7 @@ function github() {
 }
 
 function gitschool() {
-	cd ~/Documents/github/sep2020-stud-leander-ten-hoedt
+	cd ~/Documents/github/tue/yr1/Programming
 }
 
 function issLive() {
@@ -48,6 +51,4 @@ if [ "$color_prompt" = yes ]; then
 else
  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
 fi
-unset color_prompt force_color_prompt
-
-
+unset color_prompt force_color_prompt 
